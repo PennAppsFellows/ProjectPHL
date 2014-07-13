@@ -1,0 +1,18 @@
+<% provide(:title, 'Create an Event') %>
+<h1>Create an Event</h1>
+
+<div class="row">
+	<div class="span6 offset3">
+		<%= form_for(@event) do |f| %>
+
+			<%= f.label :type_of %>
+			<%= f.text_field :type_of %>
+
+			<%= f.label :details %>
+			<%= f.text_field :details%>
+
+			<%= f.submit "Create my Event", class: "btn btn-large btn-primary" %>
+		<%end%>
+	</div>
+</div>
+

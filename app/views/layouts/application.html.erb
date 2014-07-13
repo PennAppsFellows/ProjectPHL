@@ -9,6 +9,7 @@
 <body>
 
 <%= yield %>
+<%= debug(params) if Rails.env.devlopment? %>
 
 </body>
 </html>
