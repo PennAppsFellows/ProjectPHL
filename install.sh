@@ -18,6 +18,7 @@ fi
 echo "Checking for apple-gcc42..."
 if ! [[ `command brew ls apple-gcc42` =~ "apple-gcc42" ]] ; then
     echo "apple-gcc42 not found. Installing..."
+    brew tap homebrew/dupes
     brew install apple-gcc42
 fi
 
@@ -57,7 +58,6 @@ gem install bundler
 bundle install
 
 echo ""
-echo "$(tput setaf 1)You will need to add the following lines to your .bash_profile:$(tput sgr0)"
+echo "$(tput setaf 1)You will need to add the following line to your .bash_profile:$(tput sgr0)"
 echo ""
 echo "$(tput setaf 1)source $HOME/.rvm/scripts/rvm$(tput sgr0)"
-echo "$(tput setaf 1)rvm use gameon-dev@2.1.2$(tput sgr0)"
