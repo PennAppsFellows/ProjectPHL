@@ -91,4 +91,6 @@ ProjectPHL::Application.configure do
     authentication => :plain,
     domain => 'somedomain.com'
   }
+
+  config.action_mailer.default_url_options = { host: 'http://sleepy-fjord-4251.herokuapp.com' }
 end
