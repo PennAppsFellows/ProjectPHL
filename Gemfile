@@ -4,8 +4,6 @@ ruby '2.1.2'
 
 gem 'rails', '4.1.0'
 
-# Dev DB
-gem 'sqlite3'
 
 # JS
 gem 'jquery-rails'
