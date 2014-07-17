@@ -6,8 +6,9 @@ gem 'rails', '4.1.0'
 
 
 # JS
-gem 'jquery-rails'
 gem 'coffee-rails', '~> 4.0.0'
+gem 'jquery-rails'
+gem 'underscore-rails'
 
 # SASS support
 gem 'sass-rails', '~> 4.0.0'
