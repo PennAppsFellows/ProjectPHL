@@ -1,4 +1,7 @@
 class EventsController < ApplicationController
+  def index
+  	@all_events = Event.first(10)
+  end
   def new
 		@event = Event.new
   end
