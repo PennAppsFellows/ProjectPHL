@@ -17,10 +17,13 @@ class EventsController < ApplicationController
 		end
 	end
 
+	def rsvp
+	end
+
 	private 
 
 		def event_params
-			params.require(:event).permit(:type_of, :details, :start_at)
+			params.require(:event).permit(:type_of, :details, :start_at, :location)
 		end
 
 end
