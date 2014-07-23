@@ -8,8 +8,14 @@
 </head>
 <body>
 
-<%= yield %>
-<%= debug(params) if Rails.env.devlopment? %>
+<div class = "container">
+	<% flash.each do |name, msg|%>
+	<%= content_tag(:div, msg, class: "alert alert-info")%>
+	<% end %>
+
+	<%= yield %>
+	<%= debug(params) if Rails.env.devlopment? %>
+</div>
 
 </body>
 </html>
