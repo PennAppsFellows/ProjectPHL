@@ -1,10 +1,12 @@
-<div class = "jumbotron">
-  <h1>This is Project PHL's Homepage</h1>
-  <p>Yo</p>
-  <% if user_signed_in? %>
-    <h2>Yo, you're signed in!</h2>
-    <%= link_to "Click Here to Log out!", destroy_user_session_path, method: :delete %>
-  <% else %>
-    <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
-  <% end %>
-</div>
+<% if user_signed_in? %>
+
+  <h2>Welcome <%= current_user.name %>, you're signed in!</h2>
+  <%= link_to "Click Here to Log out!", destroy_user_session_path, method: :delete %>
+  <%= link_to "Click Here to make an event", "/events/new" %>
+<% else %>
+  <div class = "jumbotron">
+    <h1>This is Project PHL's Homepage</h1>
+    <p>Yo</p>
+      <%= link_to "Log in with Facebook", user_omniauth_authorize_path(:facebook) %>
+  </div>
+<% end %>
