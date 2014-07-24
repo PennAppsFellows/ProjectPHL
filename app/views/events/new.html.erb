@@ -5,11 +5,18 @@
 	<div class="span6 offset3">
 		<%= form_for(@event) do |f| %>
 
-			<%= f.label :type_of %>
+
+			<%= f.label "Date and Time" %>
+			<%= f.datetime_field :starts_at %>
+
+			<%= f.label "Sport" %>
 			<%= f.text_field :type_of %>
 
 			<%= f.label :details %>
-			<%= f.text_field :details%>
+			<%= f.text_area :details %>
+
+			<%= f.label :location %>
+			<%= f.text_field :location %>
 
 			<%= f.submit "Create my Event", class: "btn btn-large btn-primary" %>
 		<%end%>
