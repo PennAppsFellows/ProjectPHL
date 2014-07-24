@@ -1,6 +1,11 @@
 ProjectPHL::Application.routes.draw do
   devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
-  resources :events
+	resources :events do
+		member do
+			post :rsvp
+			post :check_in
+		end
+	end
   match '/profile/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
   root "pages#home"
 

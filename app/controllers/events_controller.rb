@@ -20,10 +20,28 @@ class EventsController < ApplicationController
 		end
 	end
 
+	def rsvp
+		@user = current_user
+		@event = Event.find(params[:id])
+		if @event.save
+			flash[:success] = "RSVP'd!"
+			redirect_to @event
+		end
+	end
+
+	def check_in
+		@user = current_user
+		@event = Event.find(params[:id])
+		if @event.save
+			flash[:success] = "Checked in!"
+			redirect_to @event
+		end
+	end
+	
 	private 
 
 		def event_params
-			params.require(:event).permit(:type_of, :details, :start_at)
+			params.require(:event).permit(:type_of, :details, :start_at, :location)
 		end
 
 end

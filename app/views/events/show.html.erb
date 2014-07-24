@@ -1,1 +1,9 @@
-<%= @event.type_of %>, <%= @event.details %>, <%= @event.starts_at %>
+<%= @event.type_of %>, <%= @event.location %>, <%= @event.details %>, <%= @event.starts_at %>
+
+<%= form_for(@event, :url => rsvp_event_path(@event), :method => :post) do |f| %>
+	<%= f.submit "RSVP", class: "btn btn-large btn-primary" %>
+<%end%>
+
+<%= form_for(@event, :url => check_in_event_path(@event), :method => :post) do |f| %>
+	<%= f.submit "Check-In", class: "btn btn-large btn-primary" %>
+<%end%>
