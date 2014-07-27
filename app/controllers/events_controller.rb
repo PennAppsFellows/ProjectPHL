@@ -23,7 +23,11 @@ class EventsController < ApplicationController
 	def rsvp
 		@user = current_user
 		@event = Event.find(params[:id])
-		if @event.save
+		@rsvp = Rsvp.new(user: @user, event: @event)
+		if Rsvp.find_by(user: @user, event: @event)
+			flash[:notice] = "You already RSVP'd."
+			redirect_to @event
+		elsif @rsvp.save
 			flash[:success] = "RSVP'd!"
 			redirect_to @event
 		end
@@ -32,7 +36,11 @@ class EventsController < ApplicationController
 	def check_in
 		@user = current_user
 		@event = Event.find(params[:id])
-		if @event.save
+		@check_in = CheckIn.new(user: @user, event: @event)
+		if CheckIn.find_by(user: @user, event: @event)
+			flash[:notice] = "You already RSVP'd."
+			redirect_to @event
+		elsif @check_in.save
 			flash[:success] = "Checked in!"
 			redirect_to @event
 		end
