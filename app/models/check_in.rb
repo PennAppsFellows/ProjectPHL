@@ -1,4 +1,6 @@
 class CheckIn < ActiveRecord::Base
-	has_one :user
-	has_one :event
+	belongs_to :user
+	belongs_to :event
+
+	validates_presence_of :user, :event
 end

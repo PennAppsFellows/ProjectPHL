@@ -11,17 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140724005323) do
-  create_table "badges_sashes", force: true do |t|
-    t.integer  "badge_id"
-    t.integer  "sash_id"
-    t.boolean  "notified_user", default: false
-    t.datetime "created_at"
-  end
+ActiveRecord::Schema.define(version: 20140727195650) do
 
-  add_index "badges_sashes", ["badge_id", "sash_id"], name: "index_badges_sashes_on_badge_id_and_sash_id"
-  add_index "badges_sashes", ["badge_id"], name: "index_badges_sashes_on_badge_id"
-  add_index "badges_sashes", ["sash_id"], name: "index_badges_sashes_on_sash_id"
+  create_table "check_ins", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "event_id"
+  end
 
   create_table "events", force: true do |t|
     t.string   "location"
@@ -46,6 +43,8 @@ ActiveRecord::Schema.define(version: 20140724005323) do
   create_table "rsvps", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "event_id"
   end
 
   create_table "users", force: true do |t|
@@ -73,9 +72,16 @@ ActiveRecord::Schema.define(version: 20140724005323) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
-  create_table "check_ins", force: true do |t|
+  create_table "badges_sashes", force: true do |t|
+    t.integer  "badge_id"
+    t.integer  "sash_id"
+    t.boolean  "notified_user", default: false
     t.datetime "created_at"
-    t.datetime "updated_at"
+  end
+
+  create_table "merit_scores", force: true do |t|
+    t.integer "sash_id"
+    t.string  "category", default: "default"
   end
 
   create_table "merit_actions", force: true do |t|
@@ -105,11 +111,11 @@ ActiveRecord::Schema.define(version: 20140724005323) do
     t.datetime "created_at"
   end
 
-  create_table "merit_scores", force: true do |t|
-    t.integer "sash_id"
-    t.string  "category", default: "default"
-  end
+  add_index "badges_sashes", ["badge_id", "sash_id"], name: "index_badges_sashes_on_badge_id_and_sash_id"
+  add_index "badges_sashes", ["badge_id"], name: "index_badges_sashes_on_badge_id"
+  add_index "badges_sashes", ["sash_id"], name: "index_badges_sashes_on_sash_id"
 
-  create_table "sashes", force: true do |t|
+  #create_table "sashes", force: true do |t|
+  #end
 
 end
