@@ -32,6 +32,9 @@ ActiveRecord::Schema.define(version: 20140727195650) do
   end
 
   create_table "events", force: true do |t|
+    t.float    "latitude"
+    t.float    "longitude"
+    #We didn't create a migration for long and lat
     t.string   "location"
     t.datetime "starts_at"
     t.string   "details"

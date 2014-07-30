@@ -5,8 +5,30 @@
 	<div class="span6 offset3">
 		<%= form_for(@event) do |f| %>
 
-
-			<%= f.label "Date and Time" %>
+			<div class="field">
+    		<%= f.label :latitude %><br>
+    		<%= f.text_field :latitude %>
+  		</div>
+		  <div class="field">
+		    <%= f.label :longitude %><br>
+		    <%= f.text_field :longitude %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :location %><br>
+		    <%= f.text_field :location %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :details %><br>
+		    <%= f.text_field :details %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :type_of %><br>
+		    <%= f.text_field :type_of %>
+		  </div>
+		  <div class="actions">
+		    <%= f.submit %>
+		  </div>
+			<!-- <%= f.label "Date and Time" %>
 			<%= f.datetime_field :starts_at %>
 
 			<%= f.label "Sport" %>
@@ -18,8 +40,7 @@
 			<%= f.label :location %>
 			<%= f.text_field :location %>
 
-			<%= f.submit "Create my Event", class: "btn btn-large btn-primary" %>
+			<%= f.submit "Create my Event", class: "btn btn-large btn-primary" %> -->
 		<%end%>
 	</div>
 </div>
-

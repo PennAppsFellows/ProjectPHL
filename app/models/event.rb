@@ -4,7 +4,7 @@ class Event < ActiveRecord::Base
 	has_many :rsvps, :dependent  => :destroy
   has_many :check_ins, :dependent  => :destroy
 
-	geocoded_by :address
+	geocoded_by :location
   after_validation :geocode
 
 
