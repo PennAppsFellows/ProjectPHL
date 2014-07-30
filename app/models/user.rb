@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_merit
+
   TEMP_EMAIL_PREFIX = 'change@me'
   TEMP_EMAIL_REGEX = /\Achange@me/
 

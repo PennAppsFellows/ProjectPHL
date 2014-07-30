@@ -23,6 +23,15 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
+# Achievments/Gamification
+
+gem 'merit'
+
+#Google Maps and Geocoder
+
+gem 'geocoder'
+gem 'gmaps4rails'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 

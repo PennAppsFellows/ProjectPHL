@@ -27,6 +27,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    ambry (0.3.1)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.7)
     bootstrap-sass (3.2.0.0)
@@ -49,6 +50,8 @@ GEM
     execjs (2.2.1)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
+    geocoder (1.2.3)
+    gmaps4rails (2.1.2)
     hashie (3.2.0)
     hike (1.2.3)
     i18n (0.6.11)
@@ -63,6 +66,8 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    merit (2.1.2)
+      ambry (~> 0.3.0)
     mime-types (1.25.1)
     minitest (5.4.0)
     multi_json (1.10.1)
@@ -156,8 +161,11 @@ DEPENDENCIES
   bootstrap-sass (~> 3.2.0)
   coffee-rails (~> 4.0.0)
   devise
+  geocoder
+  gmaps4rails
   jbuilder (~> 1.2)
   jquery-rails
+  merit
   omniauth
   omniauth-facebook
   pg
