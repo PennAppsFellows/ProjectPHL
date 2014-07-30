@@ -4,8 +4,11 @@ class Event < ActiveRecord::Base
 	has_many :rsvps, :dependent  => :destroy
   has_many :check_ins, :dependent  => :destroy
 
+	geocoded_by :address
+  after_validation :geocode
 
-	def my_date_field 
+
+	def my_date_field
 		starts_at.strftime("%d/%m/%Y")
 	end
 

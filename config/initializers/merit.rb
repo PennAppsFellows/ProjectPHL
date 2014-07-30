@@ -19,7 +19,7 @@ Merit.setup do |config|
   # config.current_user_method = 'current_user'
 end
 
-Merit::Badge.create!
+Merit::Badge.create!(
   id: 1,
   name: "Made an account",
   description: "You successfully created an account!"
