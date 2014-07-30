@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.2'
+ruby '1.9.3'
 
 gem 'rails', '4.1.0'
 
@@ -25,6 +25,9 @@ gem 'omniauth-facebook'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+
+#added this fix
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
