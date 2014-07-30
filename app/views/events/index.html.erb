@@ -1,5 +1,21 @@
-<h1>All Events</h1>
-<p><strong>Type of Event - Details</strong></p>
-<%@all_events.each do |event|%>
-<p><%=event.type_of%>-<%=event.details%></p>
-<%end%>
+<div class="container">
+  <h1>All Events</h1>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <% @all_events.each do |event| %>
+      <tr>
+        <td><%= event.type_of %></td>
+        <td><%=event.details%></td>
+      </tr>
+      <% end %>
+
+    </tbody>
+  </table>
+</div>
