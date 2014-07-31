@@ -7,6 +7,13 @@
   <div class = "jumbotron">
     <h1>This is Project PHL's Homepage</h1>
     <p>Yo</p>
-      <%= link_to "Log in with Facebook", user_omniauth_authorize_path(:facebook) %>
+      <%= link_to user_omniauth_authorize_path(:facebook) do %>
+        <button class = "fblogin">
+          <span class = "fb-logo"><i class="fa fa-facebook-square"></i></span>
+          <span class= "words">Sign up with Facebook</span>
+        </button>
+      <% end %>
+      <!-- <%= link_to "Log in with Facebook", user_omniauth_authorize_path(:facebook) %> -->
+      <!-- <%= link_to '<i class="fa fa-facebook"></i> Log in with Facebook', user_omniauth_authorize_path(:facebook) %> -->
   </div>
 <% end %>
