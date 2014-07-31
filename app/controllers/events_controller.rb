@@ -3,6 +3,11 @@ class EventsController < ApplicationController
 	before_action :authenticate_user!
   def index
   	@all_events = Event.first(10)
+		@hash = Gmaps4rails.build_markers(@all_events) do |event, marker|
+      marker.lat event.latitude
+      marker.lng event.longitude
+      marker.title event.type_of
+		end
   end
   def new
 		@event = Event.new
@@ -47,8 +52,8 @@ class EventsController < ApplicationController
 			redirect_to @event
 		end
 	end
-	
-	private 
+
+	private
 
 		def event_params
 			params.require(:event).permit(:type_of, :details, :start_at, :location)
