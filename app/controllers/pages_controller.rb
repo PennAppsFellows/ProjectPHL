@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
   def home
-    render :layout => false
+    if !user_signed_in?
+      render :layout => false
+    end
   end
 end
